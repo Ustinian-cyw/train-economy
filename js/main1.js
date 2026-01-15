@@ -28,7 +28,7 @@ const chapterConfig = [{
 		name: "第二篇章：首次提速·市场经济的春雷初动",
 		bgColor: "#16213e",
 		bgImage: "./img/s2/bg1_01.PNG",
-		fixedTrainImage: "./img/s2/train2.png"
+		fixedTrainImage: "./img/s2/train2.PNG"
 		// trainImage: "https://cdn-icons-png.flaticon.com/512/3097/3097141.png" // 红色涂装列车
 	},
 	{
@@ -37,7 +37,7 @@ const chapterConfig = [{
 		name: "第三篇章：六次提速·经济升级催生高铁萌芽",
 		bgColor: "#0f3460",
 		bgImage: "./img/s3/bg1_01.PNG",
-		fixedTrainImage: "./img/s3/train3.png"
+		fixedTrainImage: "./img/s3/train3.PNG"
 		// trainImage: "https://cdn-icons-png.flaticon.com/512/3097/3097142.png" // 蓝色空调列车
 	},
 	{
@@ -46,7 +46,7 @@ const chapterConfig = [{
 		name: "第四篇章：高铁元年·经济动脉的破局之战",
 		bgColor: "#1a1a2e",
 		bgImage: "./img/s4/bg1_01.PNG",
-		fixedTrainImage: "./img/s4/train4.png"
+		fixedTrainImage: "./img/s4/train4.PNG"
 		// trainImage: "https://cdn-icons-png.flaticon.com/512/3097/3097143.png" // 白色流线型列车
 	},
 	{
@@ -55,7 +55,7 @@ const chapterConfig = [{
 		name: "第五篇章：八纵八横·经济版图的重构之力",
 		bgColor: "#16213e",
 		bgImage: "./img/s5/bg1_01.PNG",
-		fixedTrainImage: "./img/s5/train5.png"
+		fixedTrainImage: "./img/s5/train5.PNG"
 		// trainImage: "https://cdn-icons-png.flaticon.com/512/3097/3097144.png" // 复兴号列车
 	},
 	{
@@ -64,7 +64,7 @@ const chapterConfig = [{
 		name: "第六篇章：智能高铁·经济实力的世界名片",
 		bgColor: "#0f3460",
 		bgImage: "./img/s6/bg1_01.PNG",
-		fixedTrainImage: "./img/s6/train6.png"
+		fixedTrainImage: "./img/s6/train6.PNG"
 		// trainImage: "https://cdn-icons-png.flaticon.com/512/3097/3097145.png" // 智能复兴号
 	},
 	{
@@ -72,7 +72,7 @@ const chapterConfig = [{
 		id: 7,
 		name: "结语",
 		bgColor: "#0a1931",
-		bgImage: "./img/s7/bg1_01.PNG",
+		bgImage: "./img/s7/bg1.PNG",
 		// trainImage: "https://cdn-icons-png.flaticon.com/512/3097/3097146.png" // 高铁飞驰
 	}
 ];
@@ -184,7 +184,7 @@ const pagesData = [
 		id: 1,
 		chapter: "第一篇章：绿皮记忆·经济起步的负重前行",
 		chapterIndex: 1,
-		bgImage: "./img/s1/bg1_01.PNG", // 第一篇章第一页背景
+		bgImage: "./img/s1/bg1_01.png", // 第一篇章第一页背景
 		content: `
 					<div class='chapter-title station-1'>
 						<h2>第一站：缓慢的时代（1978年前）</h3>
@@ -203,7 +203,7 @@ const pagesData = [
 		id: 2,
 		chapter: "第一篇章：绿皮记忆·经济起步的负重前行",
 		chapterIndex: 1,
-		bgImage: "./img/s1/bg1_02.PNG", // 第一篇章第二页背景
+		bgImage: "./img/s1/bg1_02.png", // 第一篇章第二页背景
 		content: `
                     <div class="s1-2 video-container" data-video="乘坐新干线">
                         <div class="video-placeholder">
@@ -1280,4 +1280,5 @@ window.addEventListener('orientationchange', function() {
 	}, 300);
 
 });
+
 
