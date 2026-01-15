@@ -1741,7 +1741,8 @@ body {
 
 .train.left {
 	left: -50vw;
-	background-image: url(../img/s0/green-train.PNG);
+	/* background-image: url(../img/s0/green-train.PNG); */
+	background-image: url(../img/s0/speed-train.PNG);
 	animation: moveLeft 6s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
 }
 
@@ -2342,3 +2343,4 @@ body {
 	}
 
 }
+
