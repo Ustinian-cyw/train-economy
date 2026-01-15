@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>时代的速度：从绿皮车到复兴号的中国经济跃迁</title>
+		<link rel="stylesheet" href="css/main1.css">
+	</head>
+	
+	<body>
+		<!-- 横屏提示 -->
+		<div class="orientation-tip">
+			<div class="tip-icon">↻</div>
+			<div class="tip-text">请将设备横屏观看，以获得最佳体验</div>
+		</div>
+
+		<!-- 视频模态框 -->
+		<div class="video-modal" id="videoModal">
+			<div class="video-modal-content">
+				<button class="video-modal-close" id="closeVideoBtn">×</button>
+				<video id="modalVideo" controls style="width: 100%; height: 100%;">
+					您的浏览器不支持视频播放
+				</video>
+			</div>
+		</div>
+
+		<!-- 开篇交互 -->
+		<div class="opening-container" id="openingScreen">
+			<h1 class="opening-title">时代的速度：从绿皮车到复兴号的中国经济跃迁</h1>
+			<div class="opening-subtitle" id="openingSubtitle">欢迎登上这趟穿越时代的列车</div>
+			<!-- 列车 -->
+			<div class="train left"></div>
+			<div class="train right"></div>
+			<div class="train-item left-train" id="greenTrain">
+				<!-- <div class="train-icon">🚂</div> -->
+				<h3>绿皮车时代</h3>
+				<p>缓慢、拥挤，却承载着一个农业国向工业国转型的沉重梦想。</p>
+			</div>
+			<div class="train-item right-train" id="highSpeedTrain">
+				<!-- <div class="train-icon">🚄</div> -->
+				<h3>高铁时代</h3>
+				<p>迅捷、舒适，展现着一个制造大国向创新强国进发的磅礴力量。</p>
+			</div>
+			
+			<div class="click-hint" id="clickHint">点击继续</div>
+		</div>
+
+		<!-- 主内容 - 超长横向画卷 -->
+		<div class="container" id="mainContainer" style="display: none;">
+			<div class="scroll-container" id="scrollContainer">
+				<div class="scroll-content" id="scrollContent">
+					<!-- 画卷页面将通过JavaScript动态生成 -->
+				</div>
+			</div>
+
+			<!-- 导航按钮 -->
+			<button class="nav-btn prev" id="prevBtn">‹</button>
+			<button class="nav-btn next" id="nextBtn">›</button>
+
+			<!-- 进度指示器 -->
+			<div class="progress-indicator">
+				<div class="progress-dots" id="progressDots">
+					<!-- 进度点将通过JavaScript动态生成 -->
+				</div>
+			</div>
+		</div>
+
+		<!-- <script src="js/main.js"></script> -->
+		<script src="js/main1.js"></script>
+	</body>
+</html>
