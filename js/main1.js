@@ -13,7 +13,7 @@ const chapterConfig = [{
 		name: "第一篇章：绿皮记忆·经济起步的负重前行",
 		bgColor: "#1a1a2e",
 		bgImage: "./img/s1/bg1_01.png",
-		fixedTrainImage: "./img/s1/train1.png",
+		fixedTrainImage: "./img/s1/train1.PNG",
 		fixedTrainPosition: {
 			top: "60%",
 			left: "20%",
@@ -1280,3 +1280,4 @@ window.addEventListener('orientationchange', function() {
 	}, 300);
 
 });
+
