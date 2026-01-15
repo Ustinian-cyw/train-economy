@@ -72,7 +72,7 @@ const chapterConfig = [{
 		id: 7,
 		name: "结语",
 		bgColor: "#0a1931",
-		bgImage: "./img/s7/bg1.PNG",
+		bgImage: "./img/s0/bg1.PNG",
 		// trainImage: "https://cdn-icons-png.flaticon.com/512/3097/3097146.png" // 高铁飞驰
 	}
 ];
@@ -773,7 +773,7 @@ const pagesData = [
 		id: 25,
 		chapter: "结语",
 		chapterIndex: 7,
-		bgImage: "./img/s0/bg1.png", // 结语页面背景
+		bgImage: "./img/s0/bg1.PNG", // 结语页面背景
 		content: `
                     <div class="epilogue-content">
                         <p class="epilogue-text">车速定格，时代不息。恭喜您已亲历一条由钢轨托起的经济奇迹。<br><br>
@@ -1280,6 +1280,7 @@ window.addEventListener('orientationchange', function() {
 	}, 300);
 
 });
+
 
 
 
