@@ -49,7 +49,7 @@ body {
 }
 
 .orientation-tip .tip-text {
-	font-size: 24px;
+	font-size: 20px;
 	line-height: 1.5;
 }
 
@@ -2343,5 +2343,6 @@ body {
 	}
 
 }
+
 
 
