@@ -224,7 +224,7 @@ const pagesData = [
 		id: 3,
 		chapter: "第一篇章：绿皮记忆·经济起步的负重前行",
 		chapterIndex: 1,
-		bgImage: "./img/s1/bg1_03.PNG", // 第一篇章第三页背景
+		bgImage: "./img/s1/bg1_03.png", // 第一篇章第三页背景
 		content: `
                     <div class="s1-3 notebook-container">
 						<p class="notebook-content">
@@ -251,7 +251,7 @@ const pagesData = [
 		id: 4,
 		chapter: "第一篇章：绿皮记忆·经济起步的负重前行",
 		chapterIndex: 1,
-		bgImage: "./img/s1/bg1_04.PNG", // 第一篇章第四页背景
+		bgImage: "./img/s1/bg1_04.png", // 第一篇章第四页背景
 		content: `
                     <div class="s1-4 quiz-container">
                         <div class="quiz-question">1978年中国铁路平均时速约为？</div>
@@ -275,7 +275,7 @@ const pagesData = [
 		id: 5,
 		chapter: "第二篇章：首次提速·市场经济的春雷初动",
 		chapterIndex: 2,
-		bgImage: "./img/s2/bg2_01.PNG", // 第二篇章第一页背景
+		bgImage: "./img/s2/bg2_01.png", // 第二篇章第一页背景
 		content: `
 					<div class='chapter-title station-2'>
 						<h2>第二站：春天的加速（1980-1990年代）</h3>
@@ -296,7 +296,7 @@ const pagesData = [
 		id: 6,
 		chapter: "第二篇章：首次提速·市场经济的春雷初动",
 		chapterIndex: 2,
-		bgImage: "./img/s2/bg2_02.PNG", // 第二篇章第二页背景
+		bgImage: "./img/s2/bg2_02.png", // 第二篇章第二页背景
 		content: `
                     <div class='s2-2 notebook-container'>
                     	<p class="notebook-content">
@@ -319,7 +319,7 @@ const pagesData = [
 		id: 7,
 		chapter: "第二篇章：首次提速·市场经济的春雷初动",
 		chapterIndex: 2,
-		bgImage: "./img/s2/bg2_03.PNG", // 第二篇章第三页背景
+		bgImage: "./img/s2/bg2_03.png", // 第二篇章第三页背景
 		content: `
                     <div class="s2-3 video-container" data-video="时代呼唤3">
                         <div class="video-placeholder">
@@ -344,7 +344,7 @@ const pagesData = [
 		id: 8,
 		chapter: "第二篇章：首次提速·市场经济的春雷初动",
 		chapterIndex: 2,
-		bgImage: "./img/s2/bg2_04.PNG", // 第二篇章第四页背景
+		bgImage: "./img/s2/bg2_04.png", // 第二篇章第四页背景
 		content: `
                     <div class="s2-4 quiz-container">
                         <div class="quiz-question">中国第一条准高速铁路是哪条？</div>
@@ -368,7 +368,7 @@ const pagesData = [
 		id: 9,
 		chapter: "第三篇章：六次提速·经济升级催生高铁萌芽",
 		chapterIndex: 3,
-		bgImage: "./img/s3/bg3_01.PNG", // 第三篇章第一页背景
+		bgImage: "./img/s3/bg3_01.png", // 第三篇章第一页背景
 		content: `
                     <div class='chapter-title station-3'>
                     	<h2>第三站：六次大提速（1997-2007）</h3>
@@ -397,7 +397,7 @@ const pagesData = [
 		id: 10,
 		chapter: "第三篇章：六次提速·经济升级催生高铁萌芽",
 		chapterIndex: 3,
-		bgImage: "./img/s3/bg3_02.PNG", // 第三篇章第二页背景
+		bgImage: "./img/s3/bg3_02.png", // 第三篇章第二页背景
 		content: `
                     <div class='s3-2 notebook-container'>
                     	<p class="notebook-content">
@@ -419,7 +419,7 @@ const pagesData = [
 		id: 11,
 		chapter: "第三篇章：六次提速·经济升级催生高铁萌芽",
 		chapterIndex: 3,
-		bgImage: "./img/s3/bg3_03.PNG", // 第三篇章第三页背景
+		bgImage: "./img/s3/bg3_03.png", // 第三篇章第三页背景
 		content: `
 					<div class="s3-3 notebook-container">
 					    <div class="notebook-quote">
@@ -436,7 +436,7 @@ const pagesData = [
 		id: 12,
 		chapter: "第三篇章：六次提速·经济升级催生高铁萌芽",
 		chapterIndex: 3,
-		bgImage: "./img/s3/bg3_04.PNG", // 第三篇章第四页背景
+		bgImage: "./img/s3/bg3_04.png", // 第三篇章第四页背景
 		content: `
                     <div class="s3-4 quiz-container">
                         <div class="quiz-question">第六次大提速首批投用的动车组车型是？</div>
@@ -460,7 +460,7 @@ const pagesData = [
 		id: 13,
 		chapter: "第四篇章：高铁元年·经济动脉的破局之战",
 		chapterIndex: 4,
-		bgImage: "./img/s4/bg4_01.PNG", // 第四篇章第一页背景
+		bgImage: "./img/s4/bg4_01.png", // 第四篇章第一页背景
 		content: `
                     <div class='chapter-title station-4'>
                     	<h2>第四站：从追赶到并跑（2008-2012）</h3>
@@ -488,7 +488,7 @@ const pagesData = [
 		id: 14,
 		chapter: "第四篇章：高铁元年·经济动脉的破局之战",
 		chapterIndex: 4,
-		bgImage: "./img/s4/bg4_02.PNG", // 第四篇章第二页背景
+		bgImage: "./img/s4/bg4_02.png", // 第四篇章第二页背景
 		content: `
                     <div class='s4-2 notebook-container'>
                     	<p class="notebook-content">
@@ -511,7 +511,7 @@ const pagesData = [
 		id: 15,
 		chapter: "第四篇章：高铁元年·经济动脉的破局之战",
 		chapterIndex: 4,
-		bgImage: "./img/s4/bg4_03.PNG", // 第四篇章第三页背景
+		bgImage: "./img/s4/bg4_03.png", // 第四篇章第三页背景
 		content: `
                     <div class="s4-3 notebook-container">
                     	<p class="notebook-content">
@@ -532,7 +532,7 @@ const pagesData = [
 		id: 16,
 		chapter: "第四篇章：高铁元年·经济动脉的破局之战",
 		chapterIndex: 4,
-		bgImage: "./img/s4/bg4_04.PNG", // 第四篇章第四页背景
+		bgImage: "./img/s4/bg4_04.png", // 第四篇章第四页背景
 		content: `
                     <div class="s4-4 quiz-container">
                         <div class="quiz-question">2008年开通的京津城际铁路最高时速为？</div>
@@ -556,7 +556,7 @@ const pagesData = [
 		id: 17,
 		chapter: "第五篇章：八纵八横·经济版图的重构之力",
 		chapterIndex: 5,
-		bgImage: "./img/s5/bg5_01.PNG", // 第五篇章第一页背景
+		bgImage: "./img/s5/bg5_01.png", // 第五篇章第一页背景
 		content: `
                     <div class='chapter-title station-5'>
                     	<h2>第五站：新时代的网格（2012-2020）</h3>
@@ -583,7 +583,7 @@ const pagesData = [
 		id: 18,
 		chapter: "第五篇章：八纵八横·经济版图的重构之力",
 		chapterIndex: 5,
-		bgImage: "./img/s5/bg5_02.PNG", // 第五篇章第二页背景
+		bgImage: "./img/s5/bg5_02.png", // 第五篇章第二页背景
 		content: `
                     <div class='s5-2-1 notebook-container'>
                     	<p class="notebook-content">
@@ -625,7 +625,7 @@ const pagesData = [
 		id: 19,
 		chapter: "第五篇章：八纵八横·经济版图的重构之力",
 		chapterIndex: 5,
-		bgImage: "./img/s5/bg5_03.PNG", // 第五篇章第三页背景
+		bgImage: "./img/s5/bg5_03.png", // 第五篇章第三页背景
 		content: `
                     
 					<div class='s5-3-1 notebook-container'>
@@ -652,7 +652,7 @@ const pagesData = [
 		id: 20,
 		chapter: "第五篇章：八纵八横·经济版图的重构之力",
 		chapterIndex: 5,
-		bgImage: "./img/s5/bg5_04.PNG", // 第五篇章第四页背景
+		bgImage: "./img/s5/bg5_04.png", // 第五篇章第四页背景
 		content: `
                     <div class="s5-4 quiz-container">
                         <div class="quiz-question">2020年底中国高铁营业里程约？</div>
@@ -676,7 +676,7 @@ const pagesData = [
 		id: 21,
 		chapter: "第六篇章：智能高铁·经济实力的世界名片",
 		chapterIndex: 6,
-		bgImage: "./img/s6/bg6_01.PNG", // 第六篇章第一页背景
+		bgImage: "./img/s6/bg6_01.png", // 第六篇章第一页背景
 		content: `
                     <div class='chapter-title station-6'>
                     	<h2>第六站：领跑全世界（2020至今）</h3>
@@ -703,7 +703,7 @@ const pagesData = [
 		id: 22,
 		chapter: "第六篇章：智能高铁·经济实力的世界名片",
 		chapterIndex: 6,
-		bgImage: "./img/s6/bg6_02.PNG", // 第六篇章第二页背景
+		bgImage: "./img/s6/bg6_02.png", // 第六篇章第二页背景
 		content: `
                     
 					<div class='s6-2 notebook-container'>
@@ -728,7 +728,7 @@ const pagesData = [
 		id: 23,
 		chapter: "第六篇章：智能高铁·经济实力的世界名片",
 		chapterIndex: 6,
-		bgImage: "./img/s6/bg6_03.PNG", // 第六篇章第三页背景
+		bgImage: "./img/s6/bg6_03.png", // 第六篇章第三页背景
 		content: `
 					<div class="s6-3 notebook-container">
 						<p class="notebook-content">
@@ -749,7 +749,7 @@ const pagesData = [
 		id: 24,
 		chapter: "第六篇章：智能高铁·经济实力的世界名片",
 		chapterIndex: 6,
-		bgImage: "./img/s6/bg6_04.PNG", // 第六篇章第五页背景
+		bgImage: "./img/s6/bg6_04.png", // 第六篇章第五页背景
 		content: `
                     <div class="s6-4 quiz-container">
                         <div class="quiz-question">2024年12月下线的CR450试验时速达？</div>
@@ -773,7 +773,7 @@ const pagesData = [
 		id: 25,
 		chapter: "结语",
 		chapterIndex: 7,
-		bgImage: "./img/s0/bg1.PNG", // 结语页面背景
+		bgImage: "./img/s0/bg1.png", // 结语页面背景
 		content: `
                     <div class="epilogue-content">
                         <p class="epilogue-text">车速定格，时代不息。恭喜您已亲历一条由钢轨托起的经济奇迹。<br><br>
@@ -1280,5 +1280,6 @@ window.addEventListener('orientationchange', function() {
 	}, 300);
 
 });
+
 
 
