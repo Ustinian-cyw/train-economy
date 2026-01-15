@@ -986,7 +986,7 @@ function setupChapterInteraction() {
 			else if (page.id === 12) correctIndex = 1; // 和谐号
 			else if (page.id === 16) correctIndex = 2; // 350公里
 			else if (page.id === 20) correctIndex = 1; // 3.79万公里
-			else if (page.id === 25) correctIndex = 3; // 453公里
+			else if (page.id === 24) correctIndex = 3; // 453公里
 
 			// 移除所有选项的状态类
 			options.forEach(opt => {
@@ -1280,6 +1280,7 @@ window.addEventListener('orientationchange', function() {
 	}, 300);
 
 });
+
 
 
 
