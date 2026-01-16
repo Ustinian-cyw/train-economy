@@ -1,10 +1,57 @@
+// 屏幕检测
+let isPortraitMode = false;
+let orientationCheckTimeout = null;
+
+// 屏幕方向检测函数 - 放在 DOM元素定义之前
+function checkScreenOrientation() {
+	const orientationTip = document.querySelector('.orientation-tip');
+
+	// 方法1：使用 window.innerWidth/innerHeight 判断（最可靠）
+	const isPortraitBySize = window.innerHeight > window.innerWidth;
+	// 方法2：使用 screen.orientation（现代浏览器）
+	let isPortraitByOrientation = false;
+	if (screen.orientation) {
+		const orientation = screen.orientation.type;
+		isPortraitByOrientation = orientation.includes('portrait');
+	}
+	// 方法3：使用 window.orientation（旧设备）
+	let isPortraitByWindow = false;
+	if (typeof window.orientation !== 'undefined') {
+		isPortraitByWindow = Math.abs(window.orientation) !== 90;
+	}
+	// 最终判断：优先使用尺寸判断，因为它最可靠
+	isPortraitMode = isPortraitBySize || isPortraitByOrientation || isPortraitByWindow;
+	// 如果是竖屏，显示提示并隐藏内容
+	if (isPortraitMode) {
+		// 显示横屏提示
+		orientationTip.style.display = 'flex';
+		// 如果有主内容，隐藏它
+		if (mainContainer && mainContainer.style.display === 'block') {
+			mainContainer.style.display = 'none';
+		}
+		// 隐藏开篇内容（如果正在显示）
+		if (openingScreen && openingScreen.style.display !== 'none') {
+			openingScreen.style.display = 'none';
+		}
+	} else {
+		// 横屏模式，隐藏提示
+		orientationTip.style.display = 'none';
+		// 恢复之前显示的内容
+		if (openingScreen && openingScreen.style.display !== 'none') {
+			openingScreen.style.display = 'block';
+		} else if (mainContainer && openingScreen.style.display === 'none') {
+			mainContainer.style.display = 'block';
+		}
+	}
+}
+
 // 章节背景图和前景火车图片配置
 const chapterConfig = [{
 		// 开篇
 		id: 0,
 		name: "开篇",
 		bgColor: "#000000",
-		bgImage: "./img/s0/bg1.PNG"
+		bgImage: "/img/s0/bg1.png"
 		// trainImage: "https://cdn-icons-png.flaticon.com/512/3097/3097140.png" // 对比列车图标
 	},
 	{
@@ -12,7 +59,7 @@ const chapterConfig = [{
 		id: 1,
 		name: "第一篇章：绿皮记忆·经济起步的负重前行",
 		bgColor: "#1a1a2e",
-		bgImage: "./img/s1/bg1_01.png",
+		bgImage: "/img/s1/bg1_01.png",
 		fixedTrainImage: "./img/s1/train1.PNG",
 		fixedTrainPosition: {
 			top: "60%",
@@ -27,7 +74,7 @@ const chapterConfig = [{
 		id: 2,
 		name: "第二篇章：首次提速·市场经济的春雷初动",
 		bgColor: "#16213e",
-		bgImage: "./img/s2/bg1_01.PNG",
+		bgImage: "/img/s2/bg1_01.png",
 		fixedTrainImage: "./img/s2/train2.PNG"
 		// trainImage: "https://cdn-icons-png.flaticon.com/512/3097/3097141.png" // 红色涂装列车
 	},
@@ -36,7 +83,7 @@ const chapterConfig = [{
 		id: 3,
 		name: "第三篇章：六次提速·经济升级催生高铁萌芽",
 		bgColor: "#0f3460",
-		bgImage: "./img/s3/bg1_01.PNG",
+		bgImage: "/img/s3/bg1_01.png",
 		fixedTrainImage: "./img/s3/train3.PNG"
 		// trainImage: "https://cdn-icons-png.flaticon.com/512/3097/3097142.png" // 蓝色空调列车
 	},
@@ -45,7 +92,7 @@ const chapterConfig = [{
 		id: 4,
 		name: "第四篇章：高铁元年·经济动脉的破局之战",
 		bgColor: "#1a1a2e",
-		bgImage: "./img/s4/bg1_01.PNG",
+		bgImage: "/img/s4/bg1_01.png",
 		fixedTrainImage: "./img/s4/train4.PNG"
 		// trainImage: "https://cdn-icons-png.flaticon.com/512/3097/3097143.png" // 白色流线型列车
 	},
@@ -54,7 +101,7 @@ const chapterConfig = [{
 		id: 5,
 		name: "第五篇章：八纵八横·经济版图的重构之力",
 		bgColor: "#16213e",
-		bgImage: "./img/s5/bg1_01.PNG",
+		bgImage: "/img/s5/bg1_01.png",
 		fixedTrainImage: "./img/s5/train5.PNG"
 		// trainImage: "https://cdn-icons-png.flaticon.com/512/3097/3097144.png" // 复兴号列车
 	},
@@ -63,7 +110,7 @@ const chapterConfig = [{
 		id: 6,
 		name: "第六篇章：智能高铁·经济实力的世界名片",
 		bgColor: "#0f3460",
-		bgImage: "./img/s6/bg1_01.PNG",
+		bgImage: "/img/s6/bg1_01.png",
 		fixedTrainImage: "./img/s6/train6.PNG"
 		// trainImage: "https://cdn-icons-png.flaticon.com/512/3097/3097145.png" // 智能复兴号
 	},
@@ -72,7 +119,7 @@ const chapterConfig = [{
 		id: 7,
 		name: "结语",
 		bgColor: "#0a1931",
-		bgImage: "./img/s0/bg1.PNG",
+		bgImage: "/img/s0/bg1.png",
 		// trainImage: "https://cdn-icons-png.flaticon.com/512/3097/3097146.png" // 高铁飞驰
 	}
 ];
@@ -194,7 +241,7 @@ const pagesData = [
 					</div>
 					<div class='s1-1 notebook-container'>
 						<p class="notebook-content">这里是1978年，中国铁路平均时速仅40+公里。<br><br>
-							中国经济刚从计划经济转向市场经济，1978年GDP仅3679亿元，工业基础薄弱，交通运力成为经济发展的突出瓶颈。<br><br>
+							中国经济刚从计划经济转向市场经济，1978年GDP仅3679亿元，工业基础薄弱，交通运力成为经济发展的突出瓶颈。<br>
 						</p>
 					</div>
                 `
@@ -286,7 +333,7 @@ const pagesData = [
 					<div class='s2-1 notebook-container'>
 						<p class="notebook-content">
 							随着市场经济大门开启，沿海地区“三来一补”加工业蓬勃发展。<br><br>
-							中国经济刚从计划经济转向市场经济，1978年GDP仅3679亿元，工业基础薄弱，交通运力成为经济发展的突出瓶颈。<br><br>
+							中国经济刚从计划经济转向市场经济，1978年GDP仅3679亿元，工业基础薄弱，交通运力成为经济发展的突出瓶颈。<br>
 						</p>
 					</div>
                     
@@ -378,7 +425,7 @@ const pagesData = [
                     </div>
                     <div class='s3-1 notebook-container'>
                     	<p class="notebook-content">
-                    		随着中国加入WTO，经济进入高速增长期，2007年GDP突破27万亿元，外贸规模持续扩大，人流、物流、资金流加速流动。<br><br>
+                    		随着中国加入WTO，经济进入高速增长期，2007年GDP突破27万亿元，外贸规模持续扩大，人流、物流、资金流加速流动。<br>
                     		铁路必须跟上制造业扩张的步伐：沿海工厂的原材料需要运入，制成品需要运往港口。农民工从一年返乡一次变为频繁往返。<br><br>
                     		1997年4月1日，中国铁路第一次大提速。京广等干线时速提至140公里，平均旅行时速54.9公里，首开“夕发朝至”，运力扩容。<br>
                     		1998年10月1日，中国铁路第二次大提速。最高时速160公里，平均55.2公里，东西干线同步升级。<br>
@@ -811,9 +858,14 @@ let currentPageIndex = 0;
 let openingClickCount = 0;
 let isScrolling = false;
 let scrollTimeout;
+let hintElement = null;
+let hintShown = false;
 
 // 初始化
 function init() {
+	// 先检查屏幕方向
+	checkScreenOrientation();
+
 	// 生成画卷页面
 	pagesData.forEach((page, index) => {
 		// 创建页面元素
@@ -883,6 +935,9 @@ function init() {
 	// 初始化开篇交互
 	setupOpeningInteraction();
 
+	// 初始化提示元素
+	initHintElement();
+
 	// 初始化章节交互
 	setupChapterInteraction();
 
@@ -898,7 +953,7 @@ function init() {
 			}
 		}
 	});
-	
+
 	// 初始化视频交互
 	setupVideoInteraction();
 
@@ -916,6 +971,49 @@ function init() {
 
 	// 初始显示火车图片
 	updateFixedTrain();
+
+	// 添加屏幕方向变化监听
+	setupOrientationListeners();
+}
+
+// 设置屏幕方向监听器 - 新添加的函数
+function setupOrientationListeners() {
+	// 监听 orientationchange 事件（设备旋转时触发）
+	window.addEventListener('orientationchange', function() {
+		// 方向变化后延迟检查，确保设备已稳定
+		clearTimeout(orientationCheckTimeout);
+		orientationCheckTimeout = setTimeout(checkScreenOrientation, 300);
+	});
+	// 监听 resize 事件（折叠屏展开/收起时会触发）
+	window.addEventListener('resize', function() {
+		// 防抖处理
+		clearTimeout(orientationCheckTimeout);
+		orientationCheckTimeout = setTimeout(checkScreenOrientation, 300);
+	});
+	// 监听窗口 load 事件
+	window.addEventListener('load', function() {
+		checkScreenOrientation();
+	});
+}
+
+// 初始化提示元素
+function initHintElement() {
+	// 创建提示元素
+	hintElement = document.createElement('div');
+	hintElement.id = 'slideHint';
+	hintElement.className = 'railway-slide-hint';
+	hintElement.innerHTML = `
+			<div class="railway-signal-lamp"></div>
+			<div class="railway-hint-text">
+				<p>← 左右滑动<br>切换页面 →</p>
+			</div>
+	    `;
+
+	// 将提示元素添加到body中
+	document.body.appendChild(hintElement);
+
+	// 初始状态下隐藏提示
+	hintElement.style.display = 'none';
 }
 
 // 设置开篇交互
@@ -925,6 +1023,14 @@ function setupOpeningInteraction() {
 
 // 处理开篇点击
 function handleOpeningClick() {
+	// 先检查是否是横屏模式
+	if (isPortraitMode) {
+		// 如果是竖屏，阻止点击并显示提示
+		const orientationTip = document.querySelector('.orientation-tip');
+		orientationTip.style.display = 'flex';
+		return;
+	}
+
 	openingClickCount++;
 
 	switch (openingClickCount) {
@@ -960,9 +1066,29 @@ function handleOpeningClick() {
 			setTimeout(() => {
 				openingScreen.style.display = 'none';
 				mainContainer.style.display = 'block';
+				setTimeout(() => {
+					showHint();
+				}, 500);
 			}, 100);
 			break;
 	}
+}
+
+// 显示提示
+function showHint() {
+	// 先检查是否是横屏模式
+	if (isPortraitMode) return;
+
+	if (!hintElement || hintShown) return;
+	hintElement.style.display = 'flex';
+	hintShown = true;
+	// 3秒后淡出提示
+	// setTimeout(() => {
+	// 	hintElement.classList.add('fade-out');
+	// 	setTimeout(() => {
+	// 		hintElement.style.display = 'none';
+	// 	}, 1000);
+	// }, 3000);
 }
 
 // 设置章节交互
@@ -1032,6 +1158,17 @@ function setupChapterInteraction() {
 // 设置视频交互
 function setupVideoInteraction() {
 	document.addEventListener('click', function(e) {
+		// 先检查是否是横屏模式
+		if (isPortraitMode) return;
+
+		if (e.target.closest('.video-placeholder')) {
+			const videoContainer = e.target.closest('.video-container');
+			const videoKey = videoContainer.dataset.video;
+			playVideo(videoKey);
+		}
+	});
+
+	document.addEventListener('click', function(e) {
 		if (e.target.closest('.video-placeholder')) {
 			const videoContainer = e.target.closest('.video-container');
 			const videoKey = videoContainer.dataset.video;
@@ -1042,8 +1179,13 @@ function setupVideoInteraction() {
 
 // 设置导航
 function setupNavigation() {
-	prevBtn.addEventListener('click', scrollToPrevPage);
-	nextBtn.addEventListener('click', scrollToNextPage);
+	prevBtn.addEventListener('click', function() {
+		if (!isPortraitMode) scrollToPrevPage();
+	});
+
+	nextBtn.addEventListener('click', function() {
+		if (!isPortraitMode) scrollToNextPage();
+	});
 
 	// 触摸滑动支持
 	let touchStartX = 0;
@@ -1052,6 +1194,8 @@ function setupNavigation() {
 	let touchEndY = 0;
 
 	scrollContainer.addEventListener('touchstart', function(e) {
+		if (isPortraitMode) return;
+
 		touchStartX = e.changedTouches[0].screenX;
 		touchStartY = e.changedTouches[0].screenY;
 	}, {
@@ -1059,6 +1203,8 @@ function setupNavigation() {
 	});
 
 	scrollContainer.addEventListener('touchend', function(e) {
+		if (isPortraitMode) return;
+
 		touchEndX = e.changedTouches[0].screenX;
 		touchEndY = e.changedTouches[0].screenY;
 
@@ -1100,6 +1246,8 @@ function setupVideoModal() {
 
 // 播放视频
 function playVideo(videoKey) {
+	if (isPortraitMode) return;
+
 	if (videoData[videoKey]) {
 		const video = videoData[videoKey];
 		// 添加调试日志
@@ -1132,6 +1280,9 @@ function closeVideoModal() {
 
 // 处理滚动事件
 function handleScroll() {
+	// 先检查是否是横屏模式
+	if (isPortraitMode) return;
+
 	if (isScrolling) return;
 
 	// 防抖处理
@@ -1152,8 +1303,21 @@ function updateCurrentPage() {
 		updateProgressDots();
 		updateNavigation();
 		updateFixedTrain();
+		checkHideHint();
 	}
 }
+
+// 检查是否需要隐藏提示
+function checkHideHint() {
+	// 如果是最后一页，确保提示隐藏
+	if (currentPageIndex === pagesData.length - 1) {
+		if (hintElement && hintShown) {
+			hintElement.style.display = 'none';
+			hintShown = false;
+		}
+	}
+}
+
 // 创建固定位置的火车图片元素
 function createFixedTrainElement() {
 	const fixedTrain = document.createElement('img');
@@ -1188,6 +1352,9 @@ function updateFixedTrain() {
 
 // 滚动到指定页面
 function scrollToPage(pageIndex) {
+	// 先检查是否是横屏模式
+	if (isPortraitMode) return;
+
 	if (pageIndex < 0 || pageIndex >= pagesData.length) return;
 
 	isScrolling = true;
@@ -1207,6 +1374,11 @@ function scrollToPage(pageIndex) {
 	// 更新导航按钮状态
 	updateNavigation();
 
+	// 检查是否需要隐藏提示
+	checkHideHint();
+
+	updateFixedTrain();
+
 	// 滚动完成后重置状态
 	setTimeout(() => {
 		isScrolling = false;
@@ -1215,6 +1387,9 @@ function scrollToPage(pageIndex) {
 
 // 滚动到上一页
 function scrollToPrevPage() {
+	// 先检查是否是横屏模式
+	if (isPortraitMode) return;
+
 	if (currentPageIndex > 0) {
 		scrollToPage(currentPageIndex - 1);
 	}
@@ -1222,6 +1397,9 @@ function scrollToPrevPage() {
 
 // 滚动到下一页
 function scrollToNextPage() {
+	// 先检查是否是横屏模式
+	if (isPortraitMode) return;
+
 	if (currentPageIndex < pagesData.length - 1) {
 		scrollToPage(currentPageIndex + 1);
 	}
@@ -1261,27 +1439,42 @@ function updateNavigation() {
 }
 
 // 页面加载完成后初始化
-document.addEventListener('DOMContentLoaded', init);
+// document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', function() {
+	// 初始检查屏幕方向
+	checkScreenOrientation();
+
+	// 延迟初始化，确保方向检测完成
+	setTimeout(init, 100);
+});
 
 // 处理窗口大小变化
 window.addEventListener('resize', function() {
+	// // 重新计算滚动位置
+	// const pageWidth = window.innerWidth;
+	// const scrollLeft = currentPageIndex * pageWidth;
+	// scrollContainer.scrollLeft = scrollLeft;
+	
 	// 重新计算滚动位置
-	const pageWidth = window.innerWidth;
-	const scrollLeft = currentPageIndex * pageWidth;
-	scrollContainer.scrollLeft = scrollLeft;
+	    if (!isPortraitMode) {
+	        const pageWidth = window.innerWidth;
+	        const scrollLeft = currentPageIndex * pageWidth;
+	        scrollContainer.scrollLeft = scrollLeft;
+	    }
 });
 
 // 处理横竖屏切换
 window.addEventListener('orientationchange', function() {
+	// setTimeout(() => {
+	// 	const pageWidth = window.innerWidth;
+	// 	const scrollLeft = currentPageIndex * pageWidth;
+	// 	scrollContainer.scrollLeft = scrollLeft;
+	// }, 300);
 	setTimeout(() => {
-		const pageWidth = window.innerWidth;
-		const scrollLeft = currentPageIndex * pageWidth;
-		scrollContainer.scrollLeft = scrollLeft;
-	}, 300);
-
+	        if (!isPortraitMode) {
+	            const pageWidth = window.innerWidth;
+	            const scrollLeft = currentPageIndex * pageWidth;
+	            scrollContainer.scrollLeft = scrollLeft;
+	        }
+	    }, 300);
 });
-
-
-
-
-
