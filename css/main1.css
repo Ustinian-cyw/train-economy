@@ -355,7 +355,7 @@ body {
 
 @media (max-height: 500px){
 	.chapter-title {
-		width: 65%;
+		width: 70%;
 		max-width: 700px;
 		top: 3%;
 		/* letter-spacing: 0.1rem; */
@@ -375,7 +375,7 @@ body {
 			right: 30%;
 		}
 		h2 {
-			font-size: 16px;
+			font-size: 15px;
 		}
 		h3 {
 			font-size: 14px;
@@ -515,6 +515,7 @@ body {
 	background: #fffef0;
 	border: 1px solid #d4c4a8;
 	border-left: 12px solid #8B4513;
+	z-index: 50;
 	box-shadow:
 		5px 5px 15px rgba(0, 0, 0, 0.1),
 		inset 0 0 50px rgba(210, 180, 140, 0.1);
@@ -600,7 +601,7 @@ body {
 		}
 	}
 	.notebook-content{
-		font-size: 12.5px;
+		font-size: 12px;
 		line-height: 1.2;
 		&::first-letter {
 			float: left;
@@ -610,7 +611,7 @@ body {
 	}
 	.notebook-quote{
 		margin: 5px 0 0 0;
-		font-size: 12.5px;
+		font-size: 12px;
 		line-height: 1.1;
 		padding: 10px 25px 10px 25px;
 		&::before {
@@ -633,7 +634,7 @@ body {
 		}
 	}
 	.notebook-content{
-		font-size: 12.5px;
+		font-size: 12px;
 		line-height: 1.2;
 		&::first-letter {
 			float: left;
@@ -643,7 +644,7 @@ body {
 	}
 	.notebook-quote{
 		margin: 5px 0 0 0;
-		font-size: 12.5px;
+		font-size: 12px;
 		line-height: 1.1;
 		padding: 10px 25px 10px 25px;
 		&::before {
@@ -660,7 +661,8 @@ body {
 
 /* 视频容器 */
 .video-container {
-	/* position: relative; */
+	position: relative;
+	z-index: 50;
 	width: 100%;
 	max-width: 650px;
 	margin: 25px auto;
@@ -1523,7 +1525,7 @@ body {
 	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 } */
 .train-item h3 {
-	font-size: 20px
+	font-size: 20px;
 	font-family: 'zhengwen';
 	color: #8B4513;
 	margin-bottom: 10px;
