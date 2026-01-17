@@ -833,7 +833,6 @@ const pagesData = [
                             <div class="poster-text">感谢您参与这段穿越时代的旅程，见证中国铁路从时速40公里到350公里的壮丽变迁，感受中国经济由追赶到领跑的磅礴力量。</div>
                         </div>
                         
-                        <p class="epilogue-ending">—— 感谢观看 ——</p>
                     </div>
                 `
 	}
@@ -1478,3 +1477,4 @@ window.addEventListener('orientationchange', function() {
 	        }
 	    }, 300);
 });
+
