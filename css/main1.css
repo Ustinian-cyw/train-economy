@@ -17,9 +17,18 @@
 
 /* 强制横屏 */
 /* 强制横屏的CSS样式 */
+.force-landscape-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  /* background: #000; */
+}
 @media (orientation: portrait) {
     .force-landscape-container {
-        position: fixed;
+        /* position: fixed; */
         top: 0;
         left: 0;
         width: 100vh;
@@ -29,9 +38,18 @@
         overflow-x: hidden;
         overflow-y: auto;
     }
-    
+    .force-landscape-container * {
+        transform: rotate(-90deg);
+        transform-origin: center;
+      }
+	  /* .force-landscape-container > *:not(.orientation-tip) {
+	      display: none !important;
+	    }
+		.orientation-tip {
+		    display: flex !important;
+		  } */
     /* 特殊处理某些第三方浏览器 */
-    .force-landscape {
+/*    .force-landscape {
         position: fixed;
         width: 100vh;
         height: 100vw;
@@ -40,12 +58,25 @@
         transform-origin: top left;
         left: 0;
         top: 100vw;
-    }
+    } */
     
     /* 针对百度浏览器的特殊处理 */
-    body[data-browser="baidu"] .force-landscape {
+  /*  body[data-browser="baidu"] .force-landscape {
         transform: rotate(90deg) translateX(-100%) translateY(-100%);
-    }
+    } */
+}
+@media (orientation: landscape) {
+  .force-landscape-container {
+    transform: none !important;
+  }
+  
+  .force-landscape-container * {
+    transform: none !important;
+  }
+  
+  .orientation-tip {
+    display: none !important;
+  }
 }
 
 /* 增强横屏提示样式 */
@@ -375,10 +406,10 @@ body {
 			right: 30%;
 		}
 		h2 {
-			font-size: 15px;
+			font-size: 13px;
 		}
 		h3 {
-			font-size: 14px;
+			font-size: 12.5px;
 			margin-top: 6px;
 			padding-top: 5px;
 		}
@@ -2280,17 +2311,17 @@ body {
 	.s4-1.notebook-container,.s5-1.notebook-container,.s6-1.notebook-container {
 		top: 50%;
 		left: 3%;
-		width: 63vw;
+		width: 64vw;
 	}
 	.s3-1.notebook-container{
 		top: 53%;
 		left: 3%;
-		width: 63vw;
+		width: 64vw;
 	}
 	.s3-1.video-container,.s4-1.video-container,.s5-1.video-container,.s6-1.video-container {
 		right: 3%;
 		/* width: 33vw; */
-		height: 33vh;
+		height: 28vh;
 		width: auto;
 	}
 	
@@ -2298,7 +2329,7 @@ body {
 	.s3-2.notebook-container, .s4-2.notebook-container, .s6-2.notebook-container {
 	    top: 40%;
 	    left: 4%;
-	    width: 55vw;
+	    width: 58vw;
 	}
 	.s5-2-1.notebook-container, .s5-2-3.notebook-container{
 		width: 28vw;
@@ -2313,7 +2344,7 @@ body {
 		right: 4%;
 		top: 40%;
 		/* width: 35vw; */
-		height: 35vh;
+		height: 30vh;
 		width: auto;
 	}
 	.s5-2-1.video-container {
